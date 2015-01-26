@@ -6,9 +6,9 @@ router.get('/', function(req, res, next){
   req.getConnection(function(err, connection){
     if(err){ return next(err); }
 
-    connection.query('SELECT * FROM photos', function(err, users){
+    connection.query('SELECT * FROM users', function(err, users){
       if(err){ return next(err); }
-      res.render('home/index', {users: users});
+      res.render('home/index', {users: users, req: req});
     });
   });
 

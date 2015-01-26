@@ -63,8 +63,8 @@ var index = require('./routers/index');
 app.use('/index', index);
 
 //Inloggen 
-var userLogin = require('./routers/login');
-app.use('/inloggen', userLogin);
+var userLogin = require('./routers/user');
+app.use('/user', userLogin);
 
 // This should be the ONLY route in this file!
 app.get('/', function(req, res){

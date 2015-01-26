@@ -1,0 +1,17 @@
+<% include ../layout/header %>
+
+<div class="container"> 
+	<h2> Inloggen </h2>
+
+	<% if(error){ %>
+  		<%= error %>
+	<% } %>
+
+	<form action="<%= req.baseUrl + "/login" %>" method="post">
+		<input type="text" name="email" value="">
+		<input type="password" name="password" value="">
+		<input type="submit" value="Inloggen">
+	</form>
+</div>
+
+<% include ../layout/footer %>
