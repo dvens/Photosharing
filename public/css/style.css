@@ -8,7 +8,7 @@
 }
 
 body {
-	background: tomato;
+	background: #f2f2f2;
 }
 
 /* header styling */
@@ -16,7 +16,7 @@ header {
 	width: 100%;
 	height: 4.6875em;
 	background: white;
-	padding: 1.5em 1em;
+	padding: 1.6em 2em;
 
 	box-shadow: 1px 1px 3px lightGrey;
 }
