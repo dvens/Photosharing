@@ -8,6 +8,7 @@ var router = express.Router();
 router.post('/', function(req, res, next) {
 	var email = req.body.email;
 	var password = req.body.password;
+	var name = req.body.name;
 
 	req.getConnection(function(err, connection) {
 		if(err){
@@ -25,7 +26,7 @@ router.post('/', function(req, res, next) {
 					// res.redirect('/login');
 				}
 			}
-			connection.query('INSERT INTO users (email, password) VALUES (?)', [[email, password]]);
+			connection.query('INSERT INTO users (email, password, name) VALUES (?)', [[email, password, name]]);
 			res.redirect('/index');
     	});
 	});

@@ -11,7 +11,7 @@ router.get('/', function(req, res){
         if(err){ return next(err); }
 
         console.log(records);
-        var name = records[0].name;
+        var name = req.session.name;
         res.render('./user', {name: name, req: req});
       });
 
@@ -49,6 +49,7 @@ router.post('/login', function(req, res, next){
 
       if(records.length > 0){
         req.session.userId = records[0].id;
+        req.session.name = records[0].name;
         console.log("Logged in! HOORAY", records[0]);
         res.redirect(req.baseUrl + "/");
       } else {
