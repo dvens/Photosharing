@@ -14,7 +14,6 @@ router.get('/', function(req, res){
         var name = req.session.name;
         res.render('./user', {name: name, req: req});
       });
-
       
     });
   } else {
