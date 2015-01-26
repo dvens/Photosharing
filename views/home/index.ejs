@@ -5,4 +5,14 @@
 <%= JSON.stringify(users, null, "  ") %>
 </pre>
 
+
+<!-- Een container waarin je kan committen en de foto kan bekijken -->
+<div class="image-container">
+	<img src="">
+	<form method="post">
+		<input type="text" name="comment" value="" required> <!-- geen users maar comments -->
+		<button>Reageer</button>
+	</form>
+</div>
+
 <% include ../layout/footer %>

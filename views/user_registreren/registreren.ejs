@@ -1,0 +1,19 @@
+<% include ../layout/header %>
+
+<p id="registrerenP">Hier kan je je registreren!</p>
+
+<form action="<%= req.baseUrl + "/" %>" method="post" id="registreren">
+	<label for="email">Email</label>
+	<input id="email" type="email" name="email" value="" required>
+
+	<label for="password">Password</label>
+	<input id="password" type="password" name="password" value="" required>
+
+	<button>Registreer</button>
+</form>
+
+<% include ../layout/footer %>
+
+
+
+
