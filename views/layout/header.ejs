@@ -9,12 +9,12 @@
   </head>
   <body>
   	<header> 
-		<h1> Home </h1>
-    <% if(!req.session.userId){ %> 
-		  <a href="/registreren"> Registreren </a>
-		  <a href="/user"> Inloggen </a>
-    <% }else { %>
-      <a href="<% req.baseUrl %>/user/logout"> Uitloggen </a>
-    <% } %>  
+  		<h1><a href="/index"> Home </a></h1>
+      <% if(!req.session.userId){ %> 
+  		  <a href="/registreren"> Registreren </a>
+  		  <a href="/user"> Inloggen </a>
+      <% }else { %>
+        <a href="<% req.baseUrl %>/user/logout"> Uitloggen </a>
+      <% } %>  
   	</header>
     <div class="container">

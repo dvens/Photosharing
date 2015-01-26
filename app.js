@@ -66,6 +66,10 @@ app.use('/index', index);
 var userLogin = require('./routers/user');
 app.use('/user', userLogin);
 
+//Registreren
+var userRegisteren = require('./routers/registreren');
+app.use('/registreren', userRegisteren);
+
 // This should be the ONLY route in this file!
 app.get('/', function(req, res){
   res.redirect('/index');
