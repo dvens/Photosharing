@@ -70,6 +70,10 @@ app.use('/user', userLogin);
 var userRegisteren = require('./routers/registreren');
 app.use('/registreren', userRegisteren);
 
+//Image upload
+var upload = require('./routers/upload');
+app.use('/uploaden', upload);
+
 // This should be the ONLY route in this file!
 app.get('/', function(req, res){
   res.redirect('/index');

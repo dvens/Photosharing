@@ -1,0 +1,16 @@
+<% include ../layout/header %>
+
+<h2> Uploaden </h2>
+
+    <% if(!req.session.userId){ %> 
+		<p> log in alsjeblieft! :D </p>
+    <% }else { %>
+    	<form action="<%= req.baseUrl %>" method="post" enctype="multipart/form-data">
+		  <input type="file" name="upload" value=""> <br>
+		  <label for="caption"> Caption: </label> <br>
+		  <input type="text" name="caption"> 
+		  <input type="submit" value="Upload"> 
+		</form>
+    <% } %>  
+
+<% include ../layout/footer %>
