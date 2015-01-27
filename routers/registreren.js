@@ -17,15 +17,7 @@ router.post('/', function(req, res, next) {
 
 		connection.query('SELECT * FROM users', function(err, records){
     		if(err){ return next(err); }
- 			
-   //  		for(var i = 0; i < records.length; i++){
-   //  			// console.log(records[i].email);
-
-   //  			if(email == records[i].email) { //email al bestaat
-			// 		res.send("Deze gebruikersnaam bestaal al, Probeer een in te loggen");
-			// 		// res.redirect('/login');
-			// 	}
-			// }
+ 		
 			connection.query('INSERT INTO users (email, password, name) VALUES (?)', [[email, password, name]]);
 			res.redirect('/index');
     	});

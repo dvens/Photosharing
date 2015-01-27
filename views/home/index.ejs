@@ -1,18 +1,25 @@
 <% include ../layout/header %>
 
-<h2>Users in database</h2>
-<pre>
-<%= JSON.stringify(users, null, "  ") %>
-</pre>
-
-
-<!-- Een container waarin je kan committen en de foto kan bekijken -->
-<div class="image-container">
-	<img src="">
-	<form method="post">
-		<input type="text" name="comment" value="" required> <!-- geen users maar comments -->
-		<button>Reageer</button>
-	</form>
+<h2>Photosharing</h2>
+<div class="row">
+<% photos.forEach(function(photo, index){ %>
+	<div class="col third">
+		<div class="photo-box">
+			<div class="img" style="background-image:url(images/<%= photo.filename %>);">
+				<div class="caption">
+					<p> <%= photo.caption %> </p>
+				</div>
+			</div> 
+			<div class="comments">
+				<h3> Comments </h3>
+			</div>
+			<form method="post">
+				<input type="text" name="comment" value="" required>
+				<button>Reageer</button>
+			</form>
+		</div>
+	</div>
+<% }); %>
 </div>
 
 <% include ../layout/footer %>

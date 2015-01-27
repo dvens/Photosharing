@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-var filesPath = __dirname + "/../files/";
+//var filesPath = __dirname + "/../files/";
+var filesPath = './public/images/';
 
 router.get('/', function(req, res){
 
