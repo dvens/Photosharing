@@ -14,4 +14,22 @@ router.get('/', function(req, res, next){
 
 });
 
+router.post('/:id/comment', function(req, res){
+	var id = req.params.id;
+	var comment = req.body.comment;
+	var d = new Date();
+	var yy = d.getFullYear();
+	var mm = d.getMonth();
+	var dd = d.getDay();
+	var day = mm+'/'+dd+'/'+yy;
+
+  	req.getConnection(function(err, connection){
+  		if(err){ next(err); }
+
+	    connection.query("INSERT INTO comments (photo_id, created_at , comment) VALUES (?)", [[id, day, comment]], function(){
+	    	res.redirect(req.baseUrl);
+	    });
+    });
+});
+
 module.exports = router;

@@ -114,7 +114,7 @@ form#bgform {
 		color: rgb(137, 137, 137);
 		border-radius: 11px;
 	}
-	
+
 	#registrerenP  {
 		margin: 0 auto;
 		max-width: 30em;
@@ -175,6 +175,8 @@ form#bgform {
 	-moz-box-shadow: 0 1px 16px rgba(0,0,0,.1);
 	box-shadow: 0 1px 16px rgba(0,0,0,.1);
 	text-align: left;
+
+	margin-bottom: 1em;
 }
 
 .photo-box > .img {
