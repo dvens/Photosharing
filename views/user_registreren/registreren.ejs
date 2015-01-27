@@ -1,19 +1,21 @@
 <% include ../layout/header %>
 
-<p id="registrerenP">Hier kan je je registreren!</p>
+<div id="bgcontainer"></div>
+	<!-- <p id="registrerenP">Hier kan je je registreren!</p> -->
 
-<form action="<%= req.baseUrl + "/" %>" method="post" id="registreren">
-	<label for="email">Email</label>
-	<input id="email" type="email" name="email" value="" required>
+	<form action="<%= req.baseUrl + "/" %>" method="post" id="bgform">
+		<!-- <label for="email">Email</label> -->
+		<input id="email" type="email" name="email" value="" placeholder="Email" required >
 
-	<label for="password">Password</label>
-	<input id="password" type="password" name="password" value="" required>
+		<!-- <label for="password">Password</label> -->
+		<input id="password" type="password" name="password" value="" placeholder="Password" required enctype="multipart/form-data">
 
-	<label for="name">Name</label>
-	<input id="name" type="text" name="name" value="" required>
+		<!-- <label for="name">Name</label> -->
+		<input id="name" type="text" name="name" value="" placeholder="name" required>
 
-	<button>Registreer</button>
-</form>
+		<button>Registreer</button>
+	</form>
+
 
 <% include ../layout/footer %>
 
