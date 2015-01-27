@@ -9,9 +9,9 @@ router.get('/', function(req, res, next){
     connection.query('SELECT * FROM photos ORDER BY id DESC', function(err, photos){
       if(err){ return next(err); }
 
-       	connection.query('SELECT * FROM comments', function(err, comments){
+       	connection.query('SELECT * FROM comments', function(err, comments, comment){
 	      if(err){ return next(err); }
-	      	 res.render('home/index', {comments: comments ,photos: photos, req: req});
+	      	 res.render('home/index', {comments: comments, comment: comment, photos: photos, req: req});
 	      });
     });
   });

@@ -12,11 +12,15 @@
 			</div> 
 			<div class="comments">
 				<h3> Comments </h3>
-				<% if(photo.id == photo.photo_id) { %>
-					<p><%= photo_id[0] %></p>
-				<% } %>
-					
+				
+				<% comments.forEach(function(comments, index, comment){ %>
+					<% if (photo.id == comments.photo_id) { %>
+						<p> <%= comments.comment %> </p>
+					<% } %>
+				<% }); %>
 
+				
+	
 			</div>
 			<form action=" <%= req.baseUrl %>/<%= photo.id %>/comment" method="post">
 				<input type="text" id="comment" name="comment" value="" required>
