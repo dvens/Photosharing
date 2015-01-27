@@ -1,6 +1,5 @@
 <% include ../layout/header %>
 
-<h2>Photosharing</h2>
 <div class="row">
 <% photos.forEach(function(photo, index){ %>
 	<div class="col third">
@@ -12,10 +11,16 @@
 			</div> 
 			<div class="comments">
 				<h3> Comments </h3>
+				<% comments.forEach(function(comment, index){ %>
+					
+					<% if(photo.id == comment.photo_id){ %>
+					<p> <%= comment.comment %> </p>
+					<% }%>
+				<% }); %>
 			</div>
-			<form action="<%= req.baseUrl %>/<%= photo.id %>/comment" method="post">
-				<input type="text" name="comment" value="" required>
-				<button>Reageer</button>
+			<form action=" <%= req.baseUrl %>/<%= photo.id %>/comment" method="post">
+				<input type="text" id="comment" name="comment" value="" required>
+				<input type="submit" value="Reageer">
 			</form>
 		</div>
 	</div>

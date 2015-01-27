@@ -8,7 +8,11 @@ router.get('/', function(req, res, next){
 
     connection.query('SELECT * FROM photos ORDER BY id DESC', function(err, photos){
       if(err){ return next(err); }
-      res.render('home/index', {photos: photos, req: req});
+
+       	connection.query('SELECT * FROM comments', function(err, comments){
+	      if(err){ return next(err); }
+	      	 res.render('home/index', {comments: comments ,photos: photos, req: req});
+	      });
     });
   });
 
@@ -17,6 +21,7 @@ router.get('/', function(req, res, next){
 router.post('/:id/comment', function(req, res){
 	var id = req.params.id;
 	var comment = req.body.comment;
+
 	var d = new Date();
 	var yy = d.getFullYear();
 	var mm = d.getMonth();
@@ -32,4 +37,6 @@ router.post('/:id/comment', function(req, res){
     });
 });
 
+
 module.exports = router;
+

@@ -202,8 +202,10 @@ form#bgform {
 }
 
 .photo-box .comments {
+	height: 9.375em;
 	padding: 1em;
 	border-bottom: 1px solid grey;
+	overflow: scroll;
 }
 
 .photo-box .comments p {
@@ -219,3 +221,4 @@ form#bgform {
 	color: white;
 	background-color: rgba(0,0,0,.6);
 }
+
