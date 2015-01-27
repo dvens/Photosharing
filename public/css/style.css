@@ -47,35 +47,59 @@ header {
 
 
 /* Registreren */
-form#registreren {
-	width: 20em;
+#bgcontainer {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	background-image: url('../img/background.jpg');
+	background-repeat: no-repeat;
+}
+form#bgform {
+	width: 30em;
 	display: block;
 	margin: 0 auto;
+	background-color: rgba(242, 242, 242, 0.5);
+	padding-bottom: 2em;
+	padding-top: 2em;
+	margin-top: 8em;
+	border-radius: 11px;
 }
-	form#registreren label {
+	form#bgform label {
 		width: 20em;
 		display: block;
 		font-size: 1.4em;
 		font-family: 'josefin slab';
 		font-weight: 600;
+		text-align: center;
 	}
-	form#registreren input {
+	form#bgform input {
 		width: 20em;
 		display: block;
 		font-size: 1.1em;
-		padding: 0.4em;
-		margin-bottom: 1.3em;
+		padding: 0.8em;
+		margin: 0 auto;
+		margin-bottom: 2em;
+		background-color: rgba(137, 137, 137, 0.3);
+		outline: 0px;
+		border: 0px inset;
+		border-radius: 7px;
 	}
-	form#registreren input:focus {
-		outline: 2px solid black;
+	form#bgform input:focus {
+		outline: 0px;
 	}
-	form#registreren button {
+	form#bgform button {
 		width: 15em;
 		display: block;
 		font-size: 1.2em;
 		padding: 0.4em;
-		background-color: #f2f2f2;
-		border: 2px solid black;
+		background-color: rgba(242, 242, 242, 0.3);
+		border: 1px solid rgb(137, 137, 137);
+		margin: 0 auto;
+		color: rgb(137, 137, 137);
+		border-radius: 11px;
 	}
 	p#registrerenP  {
 		margin: 0 auto;
