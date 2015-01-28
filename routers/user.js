@@ -68,14 +68,14 @@ router.post('/login', function(req, res, next){
   req.getConnection(function(err, connection){
     if(err){ next(err); }
 
-    connection.query("SELECT * FROM users WHERE email = ? AND password = ?", [username, password], function(err, records){
+    connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [username, password], function(err, records){
       if(err){ next(err); }
 
       if(records.length > 0){
         req.session.userId = records[0].id;
         req.session.name = records[0].name;
         console.log("Logged in! HOORAY", records[0]);
-        res.redirect(req.baseUrl + "/");
+        res.redirect('/index');
       } else {
         var data = {
           req: req,

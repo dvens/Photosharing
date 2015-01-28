@@ -78,18 +78,17 @@ header {
 	background-size: 100%;
 	background-size: cover;
 }
-form#bgform {
+
+#bgform {
 	width: 30em;
-	display: block;
+	padding: 2em;
 	margin: 0 auto;
-	background-color: rgba(242, 242, 242, 0.5);
-	padding-bottom: 2em;
-	padding-top: 2em;
-	margin-top: 8em;
-	border-radius: 11px;
+	background-color: rgba(100,100,100,.2);
+	margin-top: 5em;
+	border-radius: 3px;
 }
 
-	form#bgform label {
+	#bgform label {
 		width: 20em;
 		display: block;
 		font-size: 1.4em;
@@ -98,42 +97,25 @@ form#bgform {
 		text-align: center;
 	}
 
-	form#bgform input {
-		width: 20em;
-		display: block;
+	#bgform input {
+		width: 100%;
 		font-size: 1.1em;
 		padding: 0.8em;
-		margin: 0 auto;
 		margin-bottom: 2em;
-		background-color: rgba(137, 137, 137, 0.3);
 		outline: 0px;
 		border: 0px inset;
-		border-radius: 7px;
+		color: black;
+		background-color: white;
+	}
+	
+	#bgform input[type="submit"]{
+		background: #3f729b;
+		color: white;
+		margin: 0;
 	}
 
-	form#bgform input:focus {
+	#bgform input:focus {
 		outline: 0px;
-	}
-
-	#bgform button {
-		width: 15em;
-		display: block;
-		font-size: 1.2em;
-		padding: 0.4em;
-		background-color: rgba(242, 242, 242, 0.3);
-		border: 1px solid rgb(137, 137, 137);
-		margin: 0 auto;
-		color: rgb(137, 137, 137);
-		border-radius: 11px;
-	}
-
-	#registrerenP  {
-		margin: 0 auto;
-		max-width: 30em;
-		font-size: 2em;
-		margin-bottom: 2em;
-		text-align: center;
-		margin-top: 1em;
 	}
 
 /* grid */
@@ -155,6 +137,44 @@ form#bgform {
   .col.half { width: 50%; }
   .col.third { width: 33.3%; }
   .col.fourth { width: 25%; }
+
+/* nav list column */
+.row.column .col.third {
+	width: 60%;
+	float: none;
+	margin: 0 auto;
+}
+
+.row.column .col.third .photo-box > .img {
+	height: 25em;
+}
+
+.filter {
+	margin-bottom: 1em;
+}
+
+	.filter a {
+		padding: 1em;
+		display: inline-block;
+		text-indent: -9999px;
+		cursor: pointer;
+	}
+
+	.filter .list {
+		background: white url('../img/list.png') center center no-repeat;
+	}
+
+	.filter .list.active {
+		background: white url('../img/list-active.png') center center no-repeat;
+	}
+
+	.filter .column {
+		background: white url('../img/col.png') center center no-repeat;
+	}
+
+	.filter .column.active {
+		background: white url('../img/col-active.png') center center no-repeat;
+	}
 
 /* Photobox */
 .photo-box {
@@ -193,7 +213,7 @@ form#bgform {
 	}
 
 	.photo-box .comments {
-		height: 7em;
+		height: 6.2em;
 		overflow: scroll;
 		background: #f6f6f6;
 		border: 1px solid #e6e6e6;
@@ -231,3 +251,37 @@ form#bgform {
 		color: #3f729b;
 	}
 
+/* ===== == = === 48em (720px) === = == ===== */
+@media only screen and (max-width: 65em) {
+  /* grid */
+  .col {
+    margin-bottom: 30px;
+  }
+
+  .col.half { width: 100%; }
+  .col.third { width: 50%; }
+  .col.fourth { width: 100%; }
+
+}
+
+
+/* ===== == = === 48em (720px) === = == ===== */
+@media only screen and (max-width: 48em) {
+  /* grid */
+  .col {
+    margin-bottom: 30px;
+  }
+
+  .col.half { width: 100%; }
+  .col.third { width: 100%; }
+  .col.fourth { width: 100%; }
+
+}
+
+
+@media only screen and (max-width: 31.25em) {
+	#bgform {
+		width: 95%;
+	}
+
+}
