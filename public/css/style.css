@@ -5,10 +5,21 @@
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	text-decoration: none;
 }
 
 body {
-	background: #f2f2f2;
+	background: #eeeeee;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-family: 'Oleo Script', cursive;
+	color: white;
+}
+
+h1 a {
+	color: white;
 }
 
 h2 {
@@ -26,30 +37,30 @@ h2 {
 header {
 	width: 100%;
 	height: 4.6875em;
-	background: white;
-	padding: 1.6em 2em;
-	margin-bottom: 1.3em;
-
+	background: #3f729b;
+	padding: 1.6em 4em;
+	margin-bottom: 3em;
+	border-bottom: 1px solid #1c5380;
 	box-shadow: 1px 1px 3px lightGrey;
 }
 	header > h1 {
 		font-size: 1.5em;
 		display: block;
+		margin-top: -.2em;
 		float: left;
 		color: black;
+
+		text-shadow: 1px 1px 1px black;
 	}
 
 	header > a {
 		display: block;
 		float: right;
 		margin-left: 1.5em;
-		color: black;
+		color: white;
+		font-weight: 500;
+		text-decoration: underline;
 	}
-
-
-
-
-
 /* Registreren */
 
 #registreren {
@@ -63,8 +74,9 @@ header {
 	top: 0;
 	left: 0;
 	z-index: -10;
-	background-image: url('../img/background.jpg');
-	background-repeat: no-repeat;
+	background: url('../img/background.jpg') no-repeat;
+	background-size: 100%;
+	background-size: cover;
 }
 form#bgform {
 	width: 30em;
@@ -124,27 +136,6 @@ form#bgform {
 		margin-top: 1em;
 	}
 
-/* HomeScreen */
-.image-container {
-	width: 30em;
-	border: 1px solid black;
-	margin: 0 auto;
-}
-	.image-container img {
-		width: 100%;
-		height: 30em;
-	}
-	.image-container form {
-		margin: 0 auto;
-	}
-	.image-container form input {
-		display: block;
-		width: 15em;
-	}
-	.image-container form button {
-		display: block;
-	}
-
 /* grid */
 .row:before, .row:after, .container:before, .container:after, .cl:after, .cl:before { content: " "; display: table; }
 .row:after, .container:after, .cl:after { clear: both; }
@@ -176,49 +167,67 @@ form#bgform {
 	box-shadow: 0 1px 16px rgba(0,0,0,.1);
 	text-align: left;
 
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 
-.photo-box > .img {
-	width: 100%;
-	height: 20em;
-	position: relative;
+	.photo-box > .img {
+		width: 100%;
+		height: 15em;
+		position: relative;
 
-	-webkit-background-size: 100%;
-	background-size: 100%;
-	
-	background-size: cover;
-	-webkit-background-size: cover;
-}
+		-webkit-background-size: 100%;
+		background-size: 100%;
+		
+		background-size: cover;
+		-webkit-background-size: cover;
+	}
 
-.photo-box > form {
-	padding: 1em;
-}
+	.photo-box > form {
+		padding: 1em;
+	}
 
-.photo-box > form input {
-	height: 3em;
-	width: 60%;
-	padding: .5em;
-}
+	.photo-box > form input {
+		height: 3em;
+		width: 100%;
+		padding: .5em;
+	}
 
-.photo-box .comments {
-	height: 9.375em;
-	padding: 1em;
-	border-bottom: 1px solid grey;
-	overflow: scroll;
-}
+	.photo-box .comments {
+		height: 7em;
+		overflow: scroll;
+		background: #f6f6f6;
+		border: 1px solid #e6e6e6;
+	}
 
-.photo-box .comments p {
-	margin-bottom: .8em;
-}
+	.photo-box .comments p {
+		padding: 1em;
+		font-size: .8em;
+		color: #696969;
+	}
 
-.photo-box .caption {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	padding: .5em;
-	color: white;
-	background-color: rgba(0,0,0,.6);
-}
+	.photo-box .comments p:nth-of-type(2n) {
+		background: #efefef;
+	}
+
+	.photo-box .comments p span {
+		font-size: .8em;
+		margin-right: 1em;
+		font-style: italic;
+		font-weight: 600;
+		color: #3f729b;
+	}
+
+	.photo-box .caption {
+		padding: .8em;
+		color: #696969;
+	}
+
+	.box-header {
+		padding: .6em;
+	}
+
+	.box-header p a {
+		font-weight: 600;
+		color: #3f729b;
+	}
 

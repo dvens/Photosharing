@@ -21,6 +21,33 @@ router.get('/', function(req, res){
   }
 });
 
+
+router.get('/:id/:name', function(req, res, next){
+  var id = req.params.id; 
+  var name = req.params.name; 
+
+  req.getConnection(function(err, connection){
+    if(err){ return next(err); }
+
+    connection.query('SELECT photos.*, users.*, photos.id AS photoId FROM photos LEFT JOIN users ON photos.user_id = users.id WHERE user_id = ?',[id], function(err, photos){
+      if(err){ return next(err); }
+
+        connection.query('SELECT * FROM comments', function(err, comments){
+        if(err){ return next(err); }
+           res.render('./user/profile', {
+            req: req,
+            id: id,
+            name : name,
+            comments: comments, 
+            photos: photos
+            });
+        });
+    });
+  });
+
+  
+});
+
 router.get('/login', function(req, res){
 	  res.render('./user/login', {
 		  req: req,
@@ -44,8 +71,6 @@ router.post('/login', function(req, res, next){
     connection.query("SELECT * FROM users WHERE email = ? AND password = ?", [username, password], function(err, records){
       if(err){ next(err); }
 
-      console.log(records);
-
       if(records.length > 0){
         req.session.userId = records[0].id;
         req.session.name = records[0].name;
@@ -54,7 +79,7 @@ router.post('/login', function(req, res, next){
       } else {
         var data = {
           req: req,
-          error: "Oh noes!"
+          error: "Username or password is not matching!"
         }
         res.render("user/login", data);
       }

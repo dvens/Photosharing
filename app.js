@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Setup Multer
 app.use(multer({
-  dest: './uploads/'
+  dest: __dirname + '/public/images'
 }));
 
 // Setup MySQL
