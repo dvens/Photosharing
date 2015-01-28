@@ -23,7 +23,7 @@ router.post("/", function(req, res){
     if(err){
       res.send("Something went wrong!");
     } else {
-      
+
       req.getConnection(function(err, connection){
       	if(err){ next(err); }
 
@@ -35,7 +35,12 @@ router.post("/", function(req, res){
     }
   }); 
 
-
 });
+
+// router.get("/", function(req, res, err) {
+//   if(err){ return next(err); }
+
+//   res
+// })
 
 module.exports = router;

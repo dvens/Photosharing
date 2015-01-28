@@ -6,12 +6,12 @@ router.get('/', function(req, res, next){
   req.getConnection(function(err, connection){
     if(err){ return next(err); }
 
-    connection.query('SELECT * FROM photos ORDER BY id DESC', function(err, photos){
+    connection.query('SELECT photos.*, users.*, photos.id AS photoId FROM photos LEFT JOIN users ON photos.user_id = users.id ORDER BY photos.id DESC', function(err, photos){
       if(err){ return next(err); }
 
-       	connection.query('SELECT * FROM comments', function(err, comments, comment){
+       	connection.query('SELECT * FROM comments', function(err, comments){
 	      if(err){ return next(err); }
-	      	 res.render('home/index', {comments: comments, comment: comment, photos: photos, req: req});
+	      	 res.render('home/index', {comments: comments, photos: photos, req: req});
 	      });
     });
   });
