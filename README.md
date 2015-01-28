@@ -1,6 +1,6 @@
 # Photosharing 
 
-Developers: Martijn Nieuwenhuizen & Dylan Vens
+Developers: 
 
 - Gebruiker inloggen 
 - Gebruiker registreren - Martijn
