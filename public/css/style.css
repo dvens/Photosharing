@@ -253,14 +253,23 @@ header {
 
 /* ===== == = === 48em (720px) === = == ===== */
 @media only screen and (max-width: 65em) {
-  /* grid */
-  .col {
-    margin-bottom: 30px;
-  }
+	
+	/* grid */
+  	.col {
+    	margin-bottom: 30px;
+  	}
 
-  .col.half { width: 100%; }
-  .col.third { width: 50%; }
-  .col.fourth { width: 100%; }
+  	.col.half { width: 100%; }
+  	.col.third { width: 50%; }
+  	.col.fourth { width: 100%; }
+
+  	.row.column .col.third {
+		width: 100%;
+	}
+
+	.row.column .col.third .photo-box > .img {
+		height: 25em;
+	}
 
 }
 
@@ -276,8 +285,11 @@ header {
   .col.third { width: 100%; }
   .col.fourth { width: 100%; }
 
-}
+  	.row.column .col.third .photo-box > .img {
+		height: 15em;
+	}
 
+}
 
 @media only screen and (max-width: 31.25em) {
 	#bgform {
