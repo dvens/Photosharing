@@ -22,6 +22,7 @@ router.post('/:id/comment', function(req, res){
 	var id = req.params.id;
 	var comment = req.body.comment;
 
+
 	var d = new Date();
 	var yy = d.getFullYear();
 	var mm = d.getMonth();
