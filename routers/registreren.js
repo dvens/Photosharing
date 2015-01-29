@@ -31,34 +31,4 @@ router.post('/', function(req, res, next) {
 	});
 });
 
-
 module.exports = router;
-
-
-// router.post('/', function(req, res, next) {
-// 	var email = req.body.email;
-// 	var password = req.body.password;
-// 	var name = req.body.name;
-
-// 	req.getConnection(function(connection) {
-
-// 		connection.query('SELECT * FROM users', function(err, records){
-//     		if(err){ return next(err); }
- 			
-//     		for(var i = 0; i < records.length; i++){
-//     			// console.log(records[i].email);
-
-//     			if(email == records[i].email) { //email al bestaat
-// 					res.send("Deze gebruikersnaam bestaal al, Probeer een in te loggen");
-// 					// res.redirect('/login');
-// 				} else {
-// 					connection.query('INSERT INTO users (email, password, name) VALUES (?)', [[email, password, name]], function(req, res) {
-// 						// res.redirect('/index');
-// 						res.redirect(req.baseURL + "/");
-// 					});	
-// 				}
-			
-//     		};
-// 		});
-// 	});
-// });

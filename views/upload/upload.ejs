@@ -3,17 +3,21 @@
 
 <div id="bgcontainer"></div>
 
-<h2> Uploaden </h2>
+<!-- <h2> Uploaden </h2> -->
 
     <% if(!req.session.userId){ %> 
 		<p> log in alsjeblieft! :D </p>
     <% }else { %>
-    	<form action="<%= req.baseUrl %>" method="post" enctype="multipart/form-data">
-		  <input type="file" name="upload" value=""> <br>
-		  <label for="caption"> Caption: </label> <br>
-		  <input type="text" name="caption"> 
-		  <input type="submit" value="Upload"> 
+    	<form id="bgform" action="<%= req.baseUrl %>" method="post" enctype="multipart/form-data">
+
+    	<div class="image-uploader">
+		  <input type="file" name="upload" value="" id="project-img" required> 
+		  <img src="" class="preview">  
+		</div>
+		  <input type="text" name="caption" placeholder="Caption">
+		  <input type="submit" value="Upload een foto"> 
 		</form>
     <% } %>  
-
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/image-upload.js"></script>
 <% include ../layout/footer %>

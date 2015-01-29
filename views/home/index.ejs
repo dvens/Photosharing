@@ -22,7 +22,10 @@
 			<div class="comments">
 				<% comments.forEach(function(comments, index, comment){ %>
 					<% if (photo.photoId == comments.photo_id) { %>
-						<p> <span> <%= comments.created_at %> </span><%= comments.comment %> </p>
+						<p> 
+							<%= comments.comment %>  
+							<span> <%= comments.created_at %> </span>
+						</p>
 					<% } %>
 				<% }); %>
 
