@@ -3,7 +3,7 @@
 Developers: Martijn Nieuwenhuizen & Dylan Vens
 
 ## Maragatsni
-This is a simple Photosharing application 
+This is a simple Photosharing application running on Node.js
 
 ## How to use it
 * Import database.sql in your database (you can find the file in the database folder)
