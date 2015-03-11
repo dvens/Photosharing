@@ -27,7 +27,7 @@ DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `photo_id` int(11) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
   `comment` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
