@@ -8,7 +8,6 @@ router.get('/', function(req, res, next){
 
     connection.query('SELECT photos.*, users.*, photos.id AS photoId FROM photos LEFT JOIN users ON photos.user_id = users.id ORDER BY photos.id DESC', function(err, photos){
       if(err){ return next(err); }
-
        	connection.query('SELECT * FROM comments', function(err, comments){
 	      if(err){ return next(err); }
 	      	 res.render('home/index', {comments: comments, photos: photos, req: req});
